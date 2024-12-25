@@ -27,11 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 GEMINI_API_KEY=os.environ.get('GEMINI_API_KEY')
-DB_NAME=os.environ.get('DB_NAME')
-DB_USER=os.environ.get('DB_USER')
-DB_PASSWORD=os.environ.get('DB_PASSWORD')
+
 DB_HOST=os.environ.get('DB_HOST')
-DB_PORT=os.environ.get('DB_PORT')
+REDIS_HOST=os.environ.get('REDIS_HOST')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,7 +93,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [REDIS_HOST],
         },
     },
 }

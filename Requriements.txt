@@ -3,6 +3,7 @@ djangorestframework
 dj-rest-auth
 markdown
 django-filter
+django-cors-headers
 djangorestframework-simplejwt
 channels[daphne]
 channels_redis
