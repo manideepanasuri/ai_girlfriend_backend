@@ -3,6 +3,7 @@
 import os
 import sys
 
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ai_girlfriend.settings")
@@ -14,13 +15,8 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-
-    # Automatically bind to the PORT provided by Render
-    if len(sys.argv) > 1 and sys.argv[1] == "runserver":
-        port = os.getenv("PORT", "8000")
-        sys.argv.append("0.0.0.0:" + port)
-
     execute_from_command_line(sys.argv)
+
 
 if __name__ == "__main__":
     main()
