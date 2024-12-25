@@ -8,10 +8,7 @@ pip install --upgrade setuptools
 pip install -r requirements.txt
 
 # Run Migrations
-python manage.py makemigrations user
-python manage.py makemigrations hometweet
-python manage.py makemigrations profiles
-python manage.py makemigrations groupapp
+python manage.py makemigrations
 python manage.py migrate
 
 gunicorn -k uvicorn.workers.UvicornWorker ai_girlfriend.asgi:application
