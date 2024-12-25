@@ -16,7 +16,7 @@ from pathlib import Path
 import dj_database_url
 from django.conf import settings
 import django
-load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,13 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project.settings")
-os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-GEMINI_API_KEY=os.environ.get('GEMINI_API_KEY')
 
-DB_HOST=os.environ.get('DB_HOST')
-REDIS_HOST=os.environ.get('REDIS_HOST')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,6 +83,13 @@ TEMPLATES = [
         },
     },
 ]
+load_dotenv()
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+GEMINI_API_KEY=os.environ.get('GEMINI_API_KEY')
+
+DB_HOST=os.environ.get('DB_HOST')
+REDIS_HOST=os.environ.get('REDIS_HOST')
 
 ASGI_APPLICATION = "ai_girlfriend.asgi.application"
 CHANNEL_LAYERS = {
@@ -202,7 +203,6 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_ALL_ORIGINS=True
 
-django.setup()
 
 
 
