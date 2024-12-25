@@ -11,5 +11,4 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 
-gunicorn -k uvicorn.workers.UvicornWorker ai_girlfriend.asgi:application
 
