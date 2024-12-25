@@ -1,0 +1,12 @@
+django
+djangorestframework
+dj-rest-auth
+markdown
+django-filter
+djangorestframework-simplejwt
+channels[daphne]
+channels_redis
+google-generativeai
+python-dotenv
+psycopg2
+dj-database-url
