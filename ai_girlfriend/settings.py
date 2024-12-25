@@ -27,7 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project.settings")
 os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
-django.setup()
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 GEMINI_API_KEY=os.environ.get('GEMINI_API_KEY')
 
@@ -202,6 +201,8 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_ALL_ORIGINS=True
+
+django.setup()
 
 
 
